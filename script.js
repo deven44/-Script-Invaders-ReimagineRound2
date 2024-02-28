@@ -250,6 +250,43 @@ iteration++;
 }
 capsule()
 
+//page1 h1 clutter 
+const h1elem = document.querySelector("#page1 #page1-content h1").textContent.split("")
+
+var clutter=""
+h1elem.forEach(function(e){
+      clutter+= `<span>${e}</span>`
+})
+console.log(clutter)
+ document.querySelector("#page1 #page1-content h1 ").innerHTML=clutter;
+
+  
+const p = gsap.timeline();
+p.to("#navbar",{
+  delay:1,
+ duration:1.4,
+marginTop:0,
+ opacity:1,
+
+},"a")
+p.from("#page1 #ellips",{
+width:"40vw",
+duration:1.4
+ },"a")
+p.from("#page1-content h1 span",{
+  y:130,
+  delay:1,
+  opacity:0,
+  duration:.5,
+  stagger:.02,
+   ease:"back.out",
+ },"a")
+ p.from("#page1-content p,#page1-footer ,#page1-content h6",{
+ duration:.5,
+ delay:1.5,
+  opacity:0,
+ },"a")
+
 const p2 = gsap.timeline();
 p2.to("#page2 canvas",{
   scale:.35,
