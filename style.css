@@ -53,7 +53,7 @@ overflow: hidden;
 
 }
  #navbar #logo{
-height: 7.7vh;
+height: 7.2vh;
 width: 12vw;
 object-fit: cover;
 }
@@ -238,6 +238,7 @@ animation-iteration-count: infinite;
 #page2 canvas{
     position: relative;
     z-index: 10;
+  
 }
 #page2 #page2-content{
     position: absolute;
