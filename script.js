@@ -73,100 +73,98 @@ function eyes() {
   }
   eyes();
 
-function canvas(){
+// function canvas(){
 
-    const canvas = document.querySelector("#page2 canvas");
-const context = canvas.getContext("2d");
+//     const canvas = document.querySelector("#page2 canvas");
+// const context = canvas.getContext("2d");
 
-canvas.height = window.innerHeight/1.4;
-canvas.width = window.innerWidth/2.7;
+// canvas.height = window.innerHeight/1.4;
+// canvas.width = window.innerWidth/2.7;
 
 
 
-window.addEventListener("resize", function () {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  render();
-});
+// window.addEventListener("resize", function () {
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
+//   render();
+// });
 
-function files(index) {
-  var data = `
-  https://duck.school/sequence/duck_mobile_compressed_2x/Duck_${index.toString().padStart(5,0)}.webp
- `;
-  return data;
-}
+// function files(index) {
+//   var data = `
+//   https://duck.school/sequence/duck_mobile_compressed_2x/Duck_${index.toString().padStart(5,0)}.webp
+//  `;
+//   return data;
+// }
 
-const frameCount = 62;
+// const frameCount = 62;
 
-const images = [];
-const imageSeq = {
-  frame: 1,
-};
+// const images = [];
+// const imageSeq = {
+//   frame: 1,
+// };
 
-for (let i = 0; i < frameCount; i++) {
-  const img = new Image();
-  img.src = files(i);
-  images.push(img);
-}
+// for (let i = 0; i < frameCount; i++) {
+//   const img = new Image();
+//   img.src = files(i);
+//   images.push(img);
+// }
 
-gsap.to(imageSeq, {
-  frame: frameCount - 1,
-  snap: "frame",
-  ease: `none`,
-  scrollTrigger: {
-    scrub:1,
-    // markers:true,
-    trigger: `#page2>canvas`,
-    //   set start end according to preference
-    start: `top 40%`,
-    end: `0% top`,
-    scroller: `#main`,
-  },
-  onUpdate: render,
-});
+// gsap.to(imageSeq, {
+//   frame: frameCount - 1,
+//   snap: "frame",
+//   ease: `none`,
+//   scrollTrigger: {
+//     scrub:1,
+//     // markers:true,
+//     trigger: `#page2>canvas`,
+//     //   set start end according to preference
+//     start: `top 40%`,
+//     end: `0% top`,
+//     scroller: `#main`,
+//   },
+//   onUpdate: render,
+// });
 
-images[1].onload = render;
+// images[1].onload = render;
 
-function render() {
-  scaleImage(images[imageSeq.frame], context);
-}
+// function render() {
+//   scaleImage(images[imageSeq.frame], context);
+// }
 
-function scaleImage(img, ctx) {
-  var canvas = ctx.canvas;
-  var hRatio = canvas.width / img.width;
-  var vRatio = canvas.height / img.height;
-  var ratio = Math.max(hRatio, vRatio);
-  var centerShift_x = (canvas.width - img.width * ratio) / 2;
-  var centerShift_y = (canvas.height - img.height * ratio) / 2;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(
-    img,
-    0,
-    0,
-    img.width,
-    img.height,
-    centerShift_x,
-    centerShift_y,
-    img.width * ratio,
-    img.height * ratio
-    );
-  }
-  ScrollTrigger.create({
+// function scaleImage(img, ctx) {
+//   var canvas = ctx.canvas;
+//   var hRatio = canvas.width / img.width;
+//   var vRatio = canvas.height / img.height;
+//   var ratio = Math.max(hRatio, vRatio);
+//   var centerShift_x = (canvas.width - img.width * ratio) / 2;
+//   var centerShift_y = (canvas.height - img.height * ratio) / 2;
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   ctx.drawImage(
+//     img,
+//     0,
+//     0,
+//     img.width,
+//     img.height,
+//     centerShift_x,
+//     centerShift_y,
+//     img.width * ratio,
+//     img.height * ratio
+//     );
+//   }
+//   ScrollTrigger.create({
     
-    trigger: "#page2",
-    pin: true,
-    // markers:true,
-    scroller: `#main`,
-    //   set start end according to preference
-    start: `top top`,
-    end: `0% -230%`,
+//     trigger: "#page2",
+//     pin: true,
+//     // markers:true,
+//     scroller: `#main`,
+//     //   set start end according to preference
+//     start: `top top`,
+//     end: `0% -230%`,
     
-  });
+//   });
   
-}
-canvas()
-
-
+// }
+// canvas()
 
 var alltextspan = document.querySelectorAll("#page2 #page2-content h1 span").forEach(function(span){
   var clutter=""
@@ -177,30 +175,30 @@ var alltextspan = document.querySelectorAll("#page2 #page2-content h1 span").for
 })
 
 // animations on page2
-var count = 0;
-setInterval(function(){
+// var count = 0;
+// setInterval(function(){
   
-  const arrowcontainer = document.querySelector("#page2")
-  if(count<7){
-    const img = document.createElement("img");
-    img.src = "https://duck.school/image/duck-step.svg"; 
-    img.classList.add("arrow");
-    img.style.left = `${Math.random() * 100}vw`; 
-    img.style.top = `${Math.random() * 100}vh`;
-    img.style.height= `${Math.random() * 200}px`
-    img.style.width= `${Math.random() * 200}px`
-    img.style.objectFit= "contain"
-    img.style.transform = `rotate(${Math.random() * 360}deg)`
+//   const arrowcontainer = document.querySelector("#page2")
+//   if(count<7){
+//     const img = document.createElement("img");
+//     img.src = "https://duck.school/image/duck-step.svg"; 
+//     img.classList.add("arrow");
+//     img.style.left = `${Math.random() * 100}vw`; 
+//     img.style.top = `${Math.random() * 100}vh`;
+//     img.style.height= `${Math.random() * 200}px`
+//     img.style.width= `${Math.random() * 200}px`
+//     img.style.objectFit= "contain"
+//     img.style.transform = `rotate(${Math.random() * 360}deg)`
     
-    arrowcontainer.appendChild(img);
-    count++;
-  }else{
-    arrowcontainer.children[2].style.scale=".2"
-    arrowcontainer.children[2].style.opacity=0
-    arrowcontainer.removeChild(arrowcontainer.children[2])
-    count--;
-  }
-},400)
+//     arrowcontainer.appendChild(img);
+//     count++;
+//   }else{
+//     arrowcontainer.children[2].style.scale=".2"
+//     arrowcontainer.children[2].style.opacity=0
+//     arrowcontainer.removeChild(arrowcontainer.children[2])
+//     count--;
+//   }
+// },400)
 
 
 // #page1 capsule--->
@@ -309,14 +307,14 @@ p2.from("#page2 #page2-content h1 span",{
     each:.05,
     from:"start"
     },
-    y:140,
+    y:150,
     opacity:0,
     scrollTrigger:{
         scrub:3,
         trigger: `#page2>canvas`,
-        // markers:true,
-        start: `0% -160%`,
-        end: `0% -210%`,
+        // markers:true,444.3.
+        start: `80% 40%`,
+        end: `0% -130%`,
         scroller: `#main`,
     }
 })
