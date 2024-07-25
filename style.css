@@ -625,11 +625,18 @@ color: rgba(0, 0, 0, 0.651);
     display: flex;
     justify-content: space-between;
     align-items: start;
+    position: relative;
 }
 
 .card2 #upper img{
     height: 20%;
-    width: 20%;
+    width: 45%;
+border-radius: 20px;
+    object-fit: cover;
+}
+#second-card #upper img{
+    height: 20%;
+    width: 75%;
 border-radius: 20px;
     object-fit: cover;
 }
@@ -734,7 +741,7 @@ rotate: -3deg;
     border: 1px solid rgb(130, 119, 119);
 }
 #footer{
-    margin-top: -550px;
+    margin-top: -395px;
     overflow: hidden;
     height: 60vh;
     width: 100vw;
@@ -789,7 +796,7 @@ rotate: -3deg;
     border-bottom: 1px solid black;
 }
 #page7{
-    height: 530vh;
+    height: 520vh;
     width: 100vw;
     background-color:transparent;
 
